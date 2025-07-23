@@ -1,0 +1,3066 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.A PRATAS 925 - Joias em Prata de Alta Qualidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --prata-claro: #f5f5f5;
+            --prata-medio: #c0c0c0;
+            --prata-escuro: #909090;
+            --prata-texto: #555;
+            --destaque: #a8a8a8;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #128C7E;
+            --sombra: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transicao: all 0.3s ease;
+            --erro: #ff6b6b;
+            --sucesso: #4CAF50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            color: var(--prata-texto);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--prata-texto);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: var(--prata-medio);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            background-color: var(--prata-escuro);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: var(--transicao);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--sombra);
+        }
+
+        .btn:hover {
+            background-color: var(--prata-texto);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: var(--whatsapp-hover);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            z-index: 1000;
+            top: 0;
+            transition: var(--transicao);
+        }
+
+        .header-scroll {
+            height: 80px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+        }
+
+        .logo-img {
+            height: 180px;
+            width: auto;
+            transition: var(--transicao);
+        }
+
+        .logo-img:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Menu Hamburger */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle i {
+            font-size: 28px;
+            color: var(--prata-texto);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--prata-texto);
+            font-weight: 500;
+            transition: var(--transicao);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--prata-escuro);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--prata-escuro);
+            bottom: 0;
+            left: 0;
+            transition: var(--transicao);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Estilo para os botões de ícone */
+        #login-btn,
+        #carrinho-btn {
+            position: relative;
+            color: var(--prata-texto);
+            font-size: 18px;
+            transition: var(--transicao);
+        }
+
+        #login-btn:hover,
+        #carrinho-btn:hover {
+            color: var(--prata-escuro);
+        }
+
+        #carrinho-contador {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--prata-escuro);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        /* Banner Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+
+        .hero-content {
+            width: 100%;
+            padding: 0 10%;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: #f0f0f0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Produtos */
+        .produtos {
+            padding: 100px 5%;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .filtros {
+            position: sticky;
+            top: 100px;
+            z-index: 50;
+            background-color: white;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filtros button {
+            background: none;
+            border: 1px solid var(--prata-medio);
+            color: var(--prata-texto);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transicao);
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filtros button img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            margin-right: 8px;
+        }
+
+        .filtros button.ativo {
+            background-color: var(--prata-escuro);
+            color: white;
+            border-color: var(--prata-escuro);
+        }
+
+        .filtros button:hover {
+            background-color: var(--prata-medio);
+            color: white;
+        }
+
+        .grade-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            min-height: 300px;
+        }
+
+        .grade-produtos>div {
+            text-align: center;
+            color: var(--prata-escuro);
+            grid-column: 1/-1;
+        }
+
+        .grade-produtos>div h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .grade-produtos>div p {
+            font-size: 1rem;
+            color: var(--prata-medio);
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicao);
+            position: relative;
+            border: 1px solid #f0f0f0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .produto.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .produto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .produto-img-container {
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+        }
+
+        .produto-img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+
+        .produto:hover .produto-img {
+            transform: scale(1.05);
+        }
+
+        .produto-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .produto-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--prata-texto);
+        }
+
+        .produto-info p {
+            color: #777;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .produto-info .preco {
+            font-size: 1.2rem;
+            color: var(--prata-escuro);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .adicionar-carrinho {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        /* Sobre */
+        .sobre {
+            padding: 80px 0;
+            background-color: var(--prata-claro);
+        }
+
+        .sobre-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sobre-content {
+            flex: 1;
+        }
+
+        .sobre-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .sobre-content h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--prata-medio);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .sobre-content p {
+            margin-bottom: 20px;
+            color: var(--prata-texto);
+            line-height: 1.8;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            transition: var(--transicao);
+        }
+
+        .sobre-imagem:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Contato */
+        .contato {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .contato-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contato-info {
+            margin-bottom: 30px;
+        }
+
+        .contato-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contato-info p {
+            color: var(--prata-texto);
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Carrinho de Compras */
+        .carrinho-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .carrinho {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .fechar-carrinho {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #777;
+            transition: var(--transicao);
+        }
+
+        .fechar-carrinho:hover {
+            color: var(--prata-escuro);
+            transform: rotate(90deg);
+        }
+
+        .carrinho h2 {
+            margin-bottom: 20px;
+            color: var(--prata-texto);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .carrinho-itens {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .carrinho-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .carrinho-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .carrinho-item-info {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .carrinho-item-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--prata-texto);
+        }
+
+        .carrinho-item-info p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .carrinho-item-remover {
+            color: #ff6b6b;
+            cursor: pointer;
+            font-size: 20px;
+            transition: var(--transicao);
+        }
+
+        .carrinho-item-remover:hover {
+            color: #ff0000;
+            transform: scale(1.2);
+        }
+
+        .frete-calculadora {
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .frete-calculadora h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--prata-texto);
+        }
+
+        .frete-input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #cep-input {
+            padding: 12px 15px;
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: var(--transicao);
+        }
+
+        #cep-input:focus {
+            border-color: var(--prata-medio);
+            outline: none;
+        }
+
+        #calcular-frete-btn {
+            padding: 12px 20px;
+        }
+
+        #frete-resultado {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        #frete-resultado p {
+            margin-bottom: 5px;
+        }
+
+        .carrinho-total {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 16px;
+        }
+
+        .carrinho-total p {
+            margin-bottom: 10px;
+        }
+
+        .carrinho-total #carrinho-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--prata-escuro);
+        }
+
+        .finalizar-compra {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        /* NOVO FORMULÁRIO DE LOGIN - ESTILO PREMIUM */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .login-modal {
+            background-color: white;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-overlay.active .login-modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Botão de fechar o formulário de login */
+        .fechar-login {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--prata-escuro);
+            transition: var(--transicao);
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .fechar-login:hover {
+            color: var(--prata-texto);
+            background-color: rgba(144, 144, 144, 0.1);
+            transform: rotate(90deg);
+        }
+
+        #login {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #imagem {
+            display: block;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.8), rgba(144, 144, 144, 0.9)), url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #imagem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.3), rgba(144, 144, 144, 0.5));
+        }
+
+        #imagem::after {
+            content: 'S.A PRATAS 925';
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .login-overlay.active #imagem::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #formulario {
+            padding: 40px;
+            width: 100%;
+            background: linear-gradient(to bottom, #f9f9f9, #f0f0f0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #formulario::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--prata-medio), var(--prata-escuro));
+        }
+
+        #formulario>h1 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--prata-texto);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.2s;
+        }
+
+        .login-overlay.active #formulario>h1 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #formulario>h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--prata-medio), var(--prata-escuro));
+            border-radius: 3px;
+        }
+
+        #formulario>p {
+            font-size: 0.9em;
+            color: var(--prata-texto);
+            margin-bottom: 25px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.3s;
+        }
+
+        .login-overlay.active #formulario>p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .campo {
+            background-color: white;
+            border: 2px solid var(--prata-medio);
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .login-overlay.active .campo {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .campo:nth-child(1) {
+            transition-delay: 0.4s;
+        }
+
+        .campo:nth-child(2) {
+            transition-delay: 0.5s;
+        }
+
+        .campo>label {
+            display: none;
+        }
+
+        .campo>i {
+            color: var(--prata-escuro);
+            font-size: 1.5em;
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            transition: var(--transicao);
+        }
+
+        .campo:focus-within>i {
+            color: var(--prata-texto);
+            transform: scale(1.1);
+        }
+
+        #login-email,
+        #login-senha {
+            background-color: transparent;
+            font-size: 1em;
+            width: calc(100% - 60px);
+            height: 56px;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            padding: 10px 15px;
+            outline: none;
+            color: var(--prata-texto);
+            transition: var(--transicao);
+        }
+
+        #login-email::placeholder,
+        #login-senha::placeholder {
+            color: var(--prata-medio);
+        }
+
+        #login-email:focus,
+        #login-senha:focus {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .campo:focus-within {
+            border-color: var(--prata-escuro);
+            box-shadow: 0 0 0 3px rgba(144, 144, 144, 0.2);
+        }
+
+        .submit {
+            display: block;
+            font-size: 1em;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(135deg, var(--prata-medio), var(--prata-escuro));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 30px 0 15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(144, 144, 144, 0.3);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.6s;
+        }
+
+        .login-overlay.active .submit {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .submit:hover {
+            background: linear-gradient(135deg, var(--prata-escuro), var(--prata-texto));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(144, 144, 144, 0.4);
+        }
+
+        .submit:active {
+            transform: translateY(0);
+        }
+
+        .submit::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .submit:hover::after {
+            transform: translateX(0);
+        }
+
+        .botao {
+            display: block;
+            text-align: center;
+            font-size: 1em;
+            width: 100%;
+            height: 50px;
+            padding-top: 15px;
+            margin-top: 15px;
+            background-color: white;
+            color: var(--prata-texto);
+            border: 2px solid var(--prata-medio);
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease 0.7s;
+        }
+
+        .login-overlay.active .botao {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .botao:hover {
+            background-color: var(--prata-claro);
+            border-color: var(--prata-escuro);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .botao>i {
+            font-size: 0.8em;
+            margin-left: 5px;
+            transition: var(--transicao);
+        }
+
+        .botao:hover>i {
+            transform: translateX(3px);
+        }
+
+        /* Efeitos de partículas para o fundo */
+        .particula {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .rodape-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .rodape-section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--prata-medio);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .rodape-section h3::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: var(--prata-medio);
+            bottom: 0;
+            left: 0;
+        }
+
+        .rodape-section ul {
+            list-style: none;
+        }
+
+        .rodape-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .rodape-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transicao);
+            font-size: 14px;
+        }
+
+        .rodape-section ul li a:hover {
+            color: var(--prata-medio);
+            padding-left: 5px;
+        }
+
+        .rodape-section p {
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .rodape-section p i {
+            margin-right: 10px;
+            color: var(--prata-medio);
+        }
+
+        .social-icons {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            font-size: 18px;
+            margin-right: 15px;
+            transition: var(--transicao);
+        }
+
+        .social-icons a:hover {
+            color: var(--prata-medio);
+            transform: translateY(-3px);
+        }
+
+        .rodape-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .pagamento-methods {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .pagamento-methods i {
+            font-size: 24px;
+            color: #ccc;
+            transition: var(--transicao);
+        }
+
+        .pagamento-methods i:hover {
+            color: var(--prata-medio);
+        }
+
+        /* Notificações */
+        .notificacao {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--prata-escuro);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 3000;
+            animation: slideIn 0.3s ease-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notificacao i {
+            font-size: 20px;
+        }
+
+        .notificacao.fade-out {
+            animation: fadeOut 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicao);
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--whatsapp-hover);
+            transform: scale(1.1);
+            color: #FFF;
+        }
+
+        /* Menu Mobile */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: white;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                flex-direction: column;
+                justify-content: center;
+                z-index: 1000;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            nav ul li a {
+                font-size: 18px;
+            }
+
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+
+            .sobre-container {
+                flex-direction: column;
+            }
+
+            .sobre-imagem {
+                order: -1;
+                margin-bottom: 30px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: 80px;
+            }
+
+            .logo-img {
+                height: 120px;
+            }
+
+            .hero {
+                height: 70vh;
+                padding-top: 80px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .filtros {
+                top: 80px;
+                padding: 10px 5px;
+            }
+
+            .filtros button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .filtros button img {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+
+            .grade-produtos {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Media Queries para o Login */
+        @media screen and (min-width: 768px) {
+            .login-modal {
+                flex-direction: row;
+                max-height: 80vh;
+            }
+
+            #login {
+                flex-direction: row;
+            }
+
+            #imagem {
+                width: 50%;
+                height: auto;
+                min-height: 500px;
+            }
+
+            #formulario {
+                width: 50%;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #formulario>h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .login-overlay {
+                padding: 10px;
+                align-items: flex-start;
+            }
+
+            .login-modal {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            #imagem {
+                height: 200px;
+            }
+
+            #formulario {
+                padding: 30px;
+            }
+
+            #formulario>h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .login-modal {
+                max-width: 1000px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            #imagem {
+                height: 150px;
+            }
+
+            #formulario {
+                padding: 20px;
+            }
+
+            .campo {
+                height: 50px;
+                margin: 15px 0;
+            }
+
+            #login-email,
+            #login-senha {
+                height: 46px;
+            }
+
+            .submit {
+                height: 50px;
+            }
+
+            #formulario>h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .grade-produtos {
+                grid-template-columns: 1fr;
+            }
+
+            .produto-img-container {
+                height: 250px;
+            }
+
+            .filtros {
+                top: 80px;
+                justify-content: flex-start;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 10px 5px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .filtros::-webkit-scrollbar {
+                display: none;
+            }
+
+            .contato-container {
+                padding: 0 15px;
+            }
+
+            .whatsapp-buttons {
+                flex-direction: column;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .carrinho {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .frete-input-container {
+                flex-direction: column;
+            }
+
+            #calcular-frete-btn {
+                width: 100%;
+            }
+        }
+
+        /* Animação de entrada suave para seções */
+        [data-anime] {
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        [data-anime="left"] {
+            transform: translateX(-50px);
+        }
+
+        [data-anime="right"] {
+            transform: translateX(50px);
+        }
+
+        [data-anime="up"] {
+            transform: translateY(50px);
+        }
+
+        [data-anime].animate {
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        /* Estilos para os novos formulários */
+        .form-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-container.active {
+            display: flex;
+        }
+
+        .form-box {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: fadeInUp 0.5s;
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--prata-texto);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .form-box h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--prata-medio), var(--prata-escuro));
+            border-radius: 3px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--prata-texto);
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--prata-medio);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transicao);
+        }
+
+        .form-group input:focus {
+            border-color: var(--prata-escuro);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(144, 144, 144, 0.2);
+        }
+
+        .form-group .error-message {
+            color: var(--erro);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .form-group.error input {
+            border-color: var(--erro);
+        }
+
+        .form-footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .form-footer p {
+            margin-top: 15px;
+            color: var(--prata-texto);
+        }
+
+        .form-footer a {
+            color: var(--prata-escuro);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transicao);
+        }
+
+        .form-footer a:hover {
+            color: var(--prata-texto);
+            text-decoration: underline;
+        }
+
+        .close-form {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--prata-escuro);
+            transition: var(--transicao);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-form:hover {
+            color: var(--prata-texto);
+            background-color: rgba(144, 144, 144, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            color: var(--sucesso);
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        /* Estilo para o botão de mostrar/ocultar senha */
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 38px;
+            cursor: pointer;
+            color: var(--prata-medio);
+            transition: var(--transicao);
+        }
+
+        .password-toggle:hover {
+            color: var(--prata-escuro);
+        }
+
+        /* Máscara para CPF e data */
+        .masked-input {
+            padding-left: 40px !important;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 38px;
+            color: var(--prata-medio);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="#home">
+                <img src="logo.png" alt="S.A PRATAS 925 - Joias em Prata 925 de Alta Qualidade" class="logo-img">
+            </a>
+        </div>
+
+        <!-- Menu Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li>
+                    <a href="#" id="login-btn">
+                        <i class="fas fa-user-shield"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="carrinho-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="carrinho-contador">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Coleção Exclusiva 2025</h2>
+            <p>Descubra peças únicas em prata 925 que contam sua história</p>
+            <a href="#produtos" class="btn">Comprar Agora</a>
+        </div>
+    </section>
+
+    <!-- Produtos Section -->
+    <section class="produtos" id="produtos">
+        <h2 class="section-title" data-anime="up">Nossas Joias</h2>
+
+        <div class="filtros">
+            <button data-categoria="aneis"><img src="/images-removebg-preview.png" alt="Anéis"> Anéis</button>
+            <button data-categoria="colares"><img src="/download-removebg-preview.png" alt="Colares"> Colares</button>
+            <button data-categoria="brincos"><img src="/brinco-removebg-preview.png" alt="Brincos"> Brincos</button>
+            <button data-categoria="pulseiras"><img src="pulseira-removebg-preview.png" alt="Pulseiras">
+                Pulseiras</button>
+            <button data-categoria="berloques"><img src="/berloque-removebg-preview.png" alt="Berloques">
+                Berloques</button>
+        </div>
+
+        <div class="grade-produtos" id="grade-produtos">
+            <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
+                <h3>Selecione uma categoria para ver nossos produtos</h3>
+                <p>Clique em um dos filtros acima para explorar nossa coleção</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="sobre" id="sobre">
+        <div class="container sobre-container">
+            <div class="sobre-content" data-anime="left">
+                <h2>Sobre a S.A PRATAS 925</h2>
+                <p>A S.A PRATAS 925 traz elegância e sofisticação em cada peça. Nossas joias são cuidadosamente
+                    selecionadas e fabricadas com os melhores materiais, garantindo qualidade e durabilidade.</p>
+                <p>Cada peça é única e pensada para celebrar momentos especiais. Trabalhamos exclusivamente com prata
+                    925 de alta qualidade, oferecendo brilho e resistência incomparáveis.</p>
+                <p>Nossa missão é proporcionar joias que contam histórias, que se tornam parta da sua vida e que podem
+                    ser transmitidas por gerações.</p>
+            </div>
+            <div class="sobre-imagem" data-anime="right">
+                <img src="logo.png" alt="Sobre a S.A PRATAS 925">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="contato" id="contato">
+        <div class="contato-container" data-anime="up">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contato-info">
+                <h3>Fale diretamente pelo WhatsApp</h3>
+                <p>Tire todas suas dúvidas sobre nossos produtos, pedidos especiais ou personalizações. Nossa equipe
+                    está pronta para te atender!</p>
+
+                <div class="whatsapp-buttons">
+                    <a href="https://wa.me/553899959880?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20S.A%20PRATAS%20925"
+                        class="btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> (38) 9995-9880
+                    </a>
+
+                    <a href="https://wa.me/5538988070509?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20S.A%20PRATAS%20925"
+                        class="btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> (38) 9 8807-0509
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Login -->
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-modal">
+            <button class="fechar-login" id="fechar-login">&times;</button>
+            <section id="login">
+                <div id="imagem">
+                    <!-- Efeito de partículas será adicionado via JavaScript -->
+                </div>
+                <div id="formulario">
+                    <h1>Acesso Restrito</h1>
+                    <p>Entre com suas credenciais para acessar</p>
+                    <form id="login-form">
+                        <div class="campo">
+                            <i class="material-icons">person</i>
+                            <input type="email" name="email" id="login-email" placeholder="Seu e-mail"
+                                autocomplete="email" required maxlength="30">
+                            <label for="ilogin">Login</label>
+                        </div>
+
+                        <div class="campo">
+                            <i class="material-icons">vpn_key</i>
+                            <input type="password" name="senha" id="login-senha" placeholder="Sua senha"
+                                autocomplete="current-password" required minlength="8" maxlength="20">
+                            <label for="isenha">Senha</label>
+                        </div>
+
+                        <button type="submit" class="submit">Acessar</button>
+
+                        <a href="#" id="esqueci-senha-btn" class="botao"> 
+                            Esqueci a senha <i class="material-icons">arrow_forward</i>
+                        </a>
+                        
+                        <a href="#" id="cadastrar-btn" class="botao" style="margin-top: 10px;">
+                            Cadastre-se <i class="material-icons">arrow_forward</i>
+                        </a>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Formulário de Cadastro -->
+    <div class="form-container" id="cadastro-form">
+        <div class="form-box">
+            <button class="close-form" id="fechar-cadastro">&times;</button>
+            <h2>Cadastre-se</h2>
+            <form id="form-cadastro">
+                <div class="form-group">
+                    <label for="nome-completo">Nome Completo</label>
+                    <input type="text" id="nome-completo" name="nome-completo" required>
+                    <div class="error-message">Por favor, insira seu nome completo</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="data-nascimento">Data de Nascimento</label>
+                    <i class="fas fa-calendar input-icon"></i>
+                    <input type="text" id="data-nascimento" name="data-nascimento" class="masked-input" placeholder="dd/mm/aaaa" required>
+                    <div class="error-message">Por favor, insira uma data válida</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <i class="fas fa-id-card input-icon"></i>
+                    <input type="text" id="cpf" name="cpf" class="masked-input" placeholder="000.000.000-00" required>
+                    <div class="error-message">Por favor, insira um CPF válido</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email-cadastro">E-mail</label>
+                    <input type="email" id="email-cadastro" name="email-cadastro" required>
+                    <div class="error-message">Por favor, insira um e-mail válido</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha-cadastro">Senha (8 números)</label>
+                    <input type="password" id="senha-cadastro" name="senha-cadastro" minlength="8" maxlength="8" pattern="\d{8}" required>
+                    <i class="fas fa-eye password-toggle" id="toggle-senha-cadastro"></i>
+                    <div class="error-message">A senha deve conter exatamente 8 números</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmar-senha">Confirmar Senha</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" minlength="8" maxlength="8" required>
+                    <i class="fas fa-eye password-toggle" id="toggle-confirmar-senha"></i>
+                    <div class="error-message">As senhas não coincidem</div>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="btn">Cadastrar</button>
+                    <p>Já tem uma conta? <a href="#" id="login-from-cadastro">Faça login</a></p>
+                </div>
+                
+                <div class="success-message" id="cadastro-sucesso">
+                    Cadastro realizado com sucesso! Você será redirecionado para a página de login.
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Formulário de Recuperação de Senha -->
+    <div class="form-container" id="recuperar-senha-form">
+        <div class="form-box">
+            <button class="close-form" id="fechar-recuperar-senha">&times;</button>
+            <h2>Recuperar Senha</h2>
+            <form id="form-recuperar-senha">
+                <div class="form-group">
+                    <label for="email-recuperacao">E-mail cadastrado</label>
+                    <input type="email" id="email-recuperacao" name="email-recuperacao" required>
+                    <div class="error-message">Por favor, insira um e-mail válido</div>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="btn">Enviar Link de Recuperação</button>
+                    <p>Lembrou sua senha? <a href="#" id="login-from-recuperacao">Faça login</a></p>
+                </div>
+                
+                <div class="success-message" id="recuperacao-sucesso">
+                    Um e-mail com instruções para redefinir sua senha foi enviado. Por favor, verifique sua caixa de entrada.
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Carrinho de Compras -->
+    <div class="carrinho-overlay" id="carrinho-overlay">
+        <div class="carrinho">
+            <button class="fechar-carrinho">&times;</button>
+            <h2>Seu Carrinho</h2>
+
+            <div class="carrinho-itens" id="carrinho-itens">
+
+            </div>
+
+            <div class="frete-calculadora">
+                <h3>Calcular Frete</h3>
+                <div class="frete-input-container">
+                    <input type="text" id="cep-input" placeholder="Digite seu CEP" maxlength="9">
+                    <button class="btn" id="calcular-frete-btn">Calcular</button>
+                </div>
+                <div id="frete-resultado"></div>
+            </div>
+
+            <div class="carrinho-total">
+                <p>Subtotal: <span id="subtotal">R$ 0,00</span></p>
+                <p>Frete: <span id="frete-valor">R$ 0,00</span></p>
+                <p>Total: <span id="carrinho-total">R$ 0,00</span></p>
+
+                <a href="https://wa.me/553899959880?text=Olá,%20gostaria%20de%20finalizar%20minha%20compra%20dos%20seguintes%20itens:"
+                    class="btn whatsapp-btn finalizar-compra" id="finalizar-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Finalizar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/553899959880" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="rodape-content">
+                <div class="rodape-section">
+                    <h3>S.A PRATAS 925</h3>
+                    <img src="logo.png" alt="S.A PRATAS 925" class="footer-logo"
+                        style="height: 100px; width: auto; filter: brightness(0) invert(1);">
+                    <p>Joias em prata 925 de alta qualidade, peças exclusivas e elegantes para todos os momentos
+                        especiais.</p>
+                </div>
+
+                <div class="rodape-section">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="rodape-section">
+                    <h3>Atendimento</h3>
+                    <p><a href="https://wa.me/553899959880?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20S.A%20PRATAS%20925"
+                            target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i>
+                            (38) 9995-9880</a></p>
+                    <p><a href="https://wa.me/5538988070509?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20S.A%20PRATAS%20925"
+                            target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i>
+                            (38) 9 8807-0509</a></p>
+                    <p><i class="fas fa-envelope"></i> Simonebragasouza222@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Paracatu, MG</p>
+                </div>
+
+                <div class="rodape-section">
+                    <h3>Rede Social</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/s.apratas925_/" target="_blank"
+                            title="Instagram S.A Pratas 925">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="rodape-section">
+                    <h3>Desenvolvido por</h3>
+                    <a href="https://paolahhbraga.netlify.app/" target="_blank"
+                        style="color: #ccc; text-decoration: none;">
+                        <i class="fas fa-laptop-code"></i> Paola Braga
+                    </a>
+                </div>
+            </div>
+            <div class="rodape-bottom">
+                <p>&copy; 2025 S.A PRATAS 925. Todos os direitos reservados.</p>
+                <div class="pagamento-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dados dos Produtos
+        const produtos = [
+            // ANÉIS
+            {
+                id: 1,
+                nome: "Anel Infinito",
+                categoria: "aneis",
+                preco: 60.00,
+                imagem: "anelinfinito.jpeg",
+                descricao: "Símbolo de eternidade em prata 925, perfeito para declarações de amor duradouras."
+            },
+            {
+                id: 2,
+                nome: "Anel Solitário Coração",
+                categoria: "aneis",
+                preco: 70.00,
+                imagem: "anelpedra.jpeg",
+                descricao: "Pedra natural semipreciosa em destaque sobre prata 925, brilho que chama atenção."
+            },
+            {
+                id: 4,
+                nome: "Anel de Pedras",
+                categoria: "aneis",
+                preco: 100.00,
+                imagem: "anelpedrinhas.jpeg",
+                descricao: "Múltiplas pedrinhas cintilantes em prata 925, efeito joalheiro sofisticado."
+            },
+            {
+                id: 5,
+                nome: "Anel Solitário",
+                categoria: "aneis",
+                preco: 70.00,
+                imagem: "anelsolitario.jpeg",
+                descricao: "Clássico solitário em prata 925, elegância atemporal para noivas e formaturas."
+            },
+
+            // BERLOQUES
+            {
+                id: 8,
+                nome: "Berloque Heineken",
+                categoria: "berloques",
+                preco: 110.00,
+                imagem: "berloqueheineken.jpeg",
+                descricao: "Edição especial em prata 925 para colecionadores da marca cervejeira."
+            },
+            {
+                id: 9,
+                nome: "Berloque Nossa Senhora Aparecida",
+                categoria: "berloques",
+                preco: 60.00,
+                imagem: "Berloquenossasenhora.jpeg",
+                descricao: "Padroeira do Brasil em prata 925, fé e devoção em um pequeno amuleto."
+            },
+            {
+                id: 10,
+                nome: "Separador Coração Vazado",
+                categoria: "berloques",
+                preco: 60.00,
+                imagem: "berloque.jpeg",
+                descricao: "Modelo básico em prata 925 para iniciar sua coleção de berloques."
+            },
+            {
+                id: 12,
+                nome: "Berloque Medalha de São Bento",
+                categoria: "berloques",
+                preco: 65.00,
+                imagem: "berloque2.jpeg",
+                descricao: "Feito em prata 925 de alta qualidade, este berloque da Medalha de São Bento une durabilidade e significado espiritual. Um amuleto de proteção!"
+            },
+
+            // BRINCOS
+            {
+                id: 14,
+                nome: "Brinco Argolinha",
+                categoria: "brincos",
+                preco: 75.00,
+                imagem: "brincoargola4.jpeg",
+                descricao: "Argola em prata 925, diâmetro médio para looks equilibrados."
+            },
+            {
+                id: 15,
+                nome: "Brinco Pedra",
+                categoria: "brincos",
+                preco: 20.00,
+                imagem: "brinco2.jpeg",
+                descricao: "Brinco em prata 925, design versátil para múltiplas ocasiões."
+            },
+            {
+                id: 16,
+                nome: "Brinco Argolinha",
+                categoria: "brincos",
+                preco: 80.00,
+                imagem: "brincoargola2.jpeg",
+                descricao: "Argola especial em prata 925, modelo da coleção com detalhes exclusivos."
+            },
+            {
+                id: 17,
+                nome: "Brinco Argola Estrela",
+                categoria: "brincos",
+                preco: 40.00,
+                imagem: "brincoargolaestrela.jpeg",
+                descricao: "Argola com detalhe estrelado em prata 925, brilho celestial em suas orelhas."
+            },
+            {
+                id: 18,
+                nome: "Brinco Argola",
+                categoria: "brincos",
+                preco: 80.00,
+                imagem: "brincoargola.jpeg",
+                descricao: "Clássico atemporal em prata 925, tamanho perfeito para uso diário."
+            },
+            {
+                id: 19,
+                nome: "Brinco Argola",
+                categoria: "brincos",
+                preco: 60.00,
+                imagem: "brincoargola1.jpeg",
+                descricao: "Modelo de argola em prata 925, diâmetro ideal para todos os estilos."
+            },
+            {
+                id: 21,
+                nome: "Brinco",
+                categoria: "brincos",
+                preco: 35.00,
+                imagem: "brincoargola4.jpeg",
+                descricao: "Modelo de argola em prata 925, para quem busca variedade em acessórios."
+            },
+            {
+                id: 22,
+                nome: "Brinco Argolinha",
+                categoria: "brincos",
+                preco: 75.00,
+                imagem: "brincoargolinha.jpeg",
+                descricao: "Versão mini em prata 925, delicadeza e sofisticação em tamanho reduzido."
+            },
+            {
+                id: 23,
+                nome: "Brinco Coração",
+                categoria: "brincos",
+                preco: 50.00,
+                imagem: "brincocoracao.jpeg",
+                descricao: "Forma de coração em prata 925, declaração de amor em forma de joia."
+            },
+            {
+                id: 24,
+                nome: "Brinco Pedra",
+                categoria: "brincos",
+                preco: 50.00,
+                imagem: "brincopedra.jpeg",
+                descricao: "Pedra natural em destaque sobre prata 925, brilho natural que encanta."
+            },
+            {
+                id: 25,
+                nome: "Brinco Trio Pedrinhas",
+                categoria: "brincos",
+                preco: 50.00,
+                imagem: "brincotriodepedras.jpeg",
+                descricao: "Conjunto harmonioso em prata 925, três pedras que dançam a cada movimento."
+            },
+            {
+                id: 26,
+                nome: "Brinco Argola",
+                categoria: "brincos",
+                preco: 30.00,
+                imagem: "brinco.jpeg",
+                descricao: "Modelo básico em prata 925, essencial para quem aprecia simplicidade elegante."
+            },
+            {
+                id: 27,
+                nome: "Brinco",
+                categoria: "brincos",
+                preco: 100.00,
+                imagem: "brinco1.jpeg",
+                descricao: "Brinco em prata 925, design versátil para diversas ocasiões."
+            },
+
+            // COLARES
+            {
+                id: 28,
+                nome: "Colar Bolinha",
+                categoria: "colares",
+                preco: 110.00,
+                imagem: "colarbolinha.jpeg",
+                descricao: "Bolinhas perfeitas de prata 925, minimalismo que nunca sai de moda."
+            },
+            {
+                id: 29,
+                nome: "Colar Coração",
+                categoria: "colares",
+                preco: 110.00,
+                imagem: "colarcoracao.jpeg",
+                descricao: "Pingente coração em prata 925, carregue seu amor próximo ao peito."
+            },
+            {
+                id: 30,
+                nome: "Colar Nossa Senhora Aparecida",
+                categoria: "colares",
+                preco: 130.00,
+                imagem: "colarnossasenhoraaparecida.jpeg",
+                descricao: "Padroeira do Brasil em prata 925, proteção e fé em forma de joia."
+            },
+            {
+                id: 31,
+                nome: "Brinco São Bento",
+                categoria: "brincos",
+                preco: 50.00,
+                imagem: "medalhasaobento.jpeg",
+                descricao: "Brinco de prata 925, tradição beneditina contra energias negativas."
+            },
+
+            // PULSEIRAS
+            {
+                id: 32,
+                nome: "Pulseira Coração",
+                categoria: "pulseiras",
+                preco: 90.00,
+                imagem: "pulseiracoracao.jpeg",
+                descricao: "Coração em prata 925, delicadeza que simboliza amor."
+            },
+            {
+                id: 33,
+                nome: "Pulseira Cruz",
+                categoria: "pulseiras",
+                preco: 80.00,
+                imagem: "pulseiracruz.jpeg",
+                descricao: "Símbolo cristão em prata 925, fé que acompanha seus movimentos."
+            },
+            {
+                id: 34,
+                nome: "Pulseira Infinito",
+                categoria: "pulseiras",
+                preco: 45.00,
+                imagem: "pulseirainfinito.jpeg",
+                descricao: "Laço infinito em prata 925, conexões que nunca se rompem."
+            },
+            {
+                id: 35,
+                nome: "Pulseira Medalha de São Bento",
+                categoria: "pulseiras",
+                preco: 80.00,
+                imagem: "pulseiramedalha.jpeg",
+                descricao: "Medalha personalizável em prata 925, transforme em uma joia única."
+            },
+            {
+                id: 36,
+                nome: "Pulseira Nossa Senhora Aparecida",
+                categoria: "pulseiras",
+                preco: 115.00,
+                imagem: "pulseiranossasenhoraaparecida.jpeg",
+                descricao: "Devocional em prata 925, proteção maternal em seu pulso."
+            },
+            {
+                id: 37,
+                nome: "Pulseira Olho Grego",
+                categoria: "pulseiras",
+                preco: 60.00,
+                imagem: "pulseiraolhogrego.jpeg",
+                descricao: "Amuleto protetor em prata 925, contra inveja e mau-olhado."
+            },
+
+            {
+                id: 39,
+                nome: "Pulseira Plaquinhas",
+                categoria: "pulseiras",
+                preco: 80.00,
+                imagem: "pulseira1.jpeg",
+                descricao: "Delicado e moderno na mesma peça em prata 925, essencial para colecionadores de joias."
+            },
+            {
+                id: 40,
+                nome: "Pulseira Trevo",
+                categoria: "pulseiras",
+                preco: 90.00,
+                imagem: "pulseira2.jpeg",
+                descricao: "Um trevinho em prata 925 para quem gosta de delicadeza."
+            },
+
+            // TRIOS
+            {
+                id: 42,
+                nome: "Trio brinco bolinha",
+                categoria: "brincos",
+                preco: 80.00,
+                imagem: "triobrincobolinha.jpeg",
+                descricao: "Conjunto de três tamanhos em prata 925, perfeito para múltiplas perfurações."
+            },
+            {
+                id: 43,
+                nome: "Trio coração",
+                categoria: "brincos",
+                preco: 60.00,
+                imagem: "triocoracao.jpeg",
+                descricao: "Três corações em prata 925, declare seu amor em diferentes tamanhos."
+            },
+            {
+                id: 44,
+                nome: "Trio pedrinha",
+                categoria: "brincos",
+                preco: 80.00,
+                imagem: "triopedrinha.jpeg",
+                descricao: "Pedras naturais em três designs em prata 925, harmoniosamente combinados."
+            }
+        ];
+
+        // Carrinho e Variáveis Globais
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let frete = 0;
+
+        // Elementos DOM
+        const gradeProdutos = document.getElementById('grade-produtos');
+        const botoesFiltro = document.querySelectorAll('.filtros button');
+        const carrinhoBtn = document.getElementById('carrinho-btn');
+        const carrinhoOverlay = document.getElementById('carrinho-overlay');
+        const carrinhoItens = document.getElementById('carrinho-itens');
+        const carrinhoTotal = document.getElementById('carrinho-total');
+        const subtotalElement = document.getElementById('subtotal');
+        const freteValorElement = document.getElementById('frete-valor');
+        const carrinhoContador = document.getElementById('carrinho-contador');
+        const fecharCarrinho = document.querySelector('.fechar-carrinho');
+        const calcularFreteBtn = document.getElementById('calcular-frete-btn');
+        const cepInput = document.getElementById('cep-input');
+        const freteResultado = document.getElementById('frete-resultado');
+        const finalizarWhatsappBtn = document.getElementById('finalizar-whatsapp');
+        const header = document.getElementById('header');
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+        const loginBtn = document.getElementById('login-btn');
+        const loginOverlay = document.getElementById('login-overlay');
+        const loginForm = document.getElementById('login-form');
+        const fecharLoginBtn = document.getElementById('fechar-login');
+        
+        // Elementos dos novos formulários
+        const cadastroForm = document.getElementById('cadastro-form');
+        const formCadastro = document.getElementById('form-cadastro');
+        const fecharCadastroBtn = document.getElementById('fechar-cadastro');
+        const cadastrarBtn = document.getElementById('cadastrar-btn');
+        const loginFromCadastroBtn = document.getElementById('login-from-cadastro');
+        const cadastroSucesso = document.getElementById('cadastro-sucesso');
+        
+        const recuperarSenhaForm = document.getElementById('recuperar-senha-form');
+        const formRecuperarSenha = document.getElementById('form-recuperar-senha');
+        const fecharRecuperarSenhaBtn = document.getElementById('fechar-recuperar-senha');
+        const esqueciSenhaBtn = document.getElementById('esqueci-senha-btn');
+        const loginFromRecuperacaoBtn = document.getElementById('login-from-recuperacao');
+        const recuperacaoSucesso = document.getElementById('recuperacao-sucesso');
+
+        // Menu Hamburger
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.innerHTML = nav.classList.contains('active') ?
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 992) {
+                    nav.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Observador de Intersecção para animações
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observar elementos com data-anime
+        document.querySelectorAll('[data-anime]').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll Header Effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scroll');
+            } else {
+                header.classList.remove('header-scroll');
+            }
+        });
+
+        // Carregar Produtos
+        function carregarProdutos(categoria) {
+            gradeProdutos.innerHTML = '';
+
+            if (!categoria) {
+                gradeProdutos.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
+                        <h3>Selecione uma categoria para ver nossos produtos</h3>
+                        <p>Clique em um dos filtros acima para explorar nossa coleção</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
+
+            if (produtosFiltrados.length === 0) {
+                gradeProdutos.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
+                        <h3>Nenhum produto encontrado nesta categoria</h3>
+                        <p>Por favor, selecione outra categoria</p>
+                    </div>
+                `;
+                return;
+            }
+
+            produtosFiltrados.forEach(produto => {
+                const produtoElement = document.createElement('div');
+                produtoElement.className = 'produto';
+                produtoElement.setAttribute('data-anime', 'up');
+                produtoElement.innerHTML = `
+                    <div class="produto-img-container">
+                        <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img" onerror="this.src='imagem-padrao.jpg'">
+                    </div>
+                    <div class="produto-info">
+                        <h3>${produto.nome}</h3>
+                        <p>${produto.descricao}</p>
+                        <span class="preco">R$ ${produto.preco.toFixed(2)}</span>
+                        <button class="btn adicionar-carrinho" data-id="${produto.id}">Adicionar ao Carrinho</button>
+                    </div>
+                `;
+                gradeProdutos.appendChild(produtoElement);
+
+                // Adicionar animação de fade-in para cada produto
+                setTimeout(() => {
+                    produtoElement.classList.add('visible');
+                }, 100);
+            });
+
+            // Adicionar eventos aos botões
+            document.querySelectorAll('.adicionar-carrinho').forEach(btn => {
+                btn.addEventListener('click', adicionarAoCarrinho);
+            });
+
+            // Observar novos produtos adicionados
+            document.querySelectorAll('.produto[data-anime]').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Filtros
+        botoesFiltro.forEach(btn => {
+            btn.addEventListener('click', () => {
+                botoesFiltro.forEach(b => b.classList.remove('ativo'));
+                btn.classList.add('ativo');
+                carregarProdutos(btn.dataset.categoria);
+
+                // Scroll suave para a seção de produtos
+                document.getElementById('produtos').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Funções do Carrinho
+        function adicionarAoCarrinho(e) {
+            const id = parseInt(e.target.dataset.id);
+            const produto = produtos.find(p => p.id === id);
+            const itemExistente = carrinho.find(item => item.id === id);
+
+            if (itemExistente) {
+                itemExistente.quantidade++;
+            } else {
+                carrinho.push({ ...produto, quantidade: 1 });
+            }
+
+            atualizarCarrinho();
+            mostrarNotificacao(`${produto.nome} adicionado ao carrinho!`);
+        }
+
+        function removerDoCarrinho(id) {
+            const itemIndex = carrinho.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                const produto = carrinho[itemIndex];
+                carrinho.splice(itemIndex, 1);
+                atualizarCarrinho();
+                mostrarNotificacao(`${produto.nome} removido do carrinho!`);
+            }
+        }
+
+        function atualizarCarrinho() {
+            carrinhoItens.innerHTML = '';
+            let subtotal = 0;
+
+            if (carrinho.length === 0) {
+                carrinhoItens.innerHTML = '<p>Seu carrinho está vazio</p>';
+            } else {
+                carrinho.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'carrinho-item';
+                    itemElement.innerHTML = `
+                        <img src="${item.imagem}" alt="${item.nome}" onerror="this.src='placeholder.jpg'">
+                        <div class="carrinho-item-info">
+                            <h4>${item.nome}</h4>
+                            <p>R$ ${item.preco.toFixed(2)} x ${item.quantidade}</p>
+                            <p>Subtotal: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+                        </div>
+                        <span class="carrinho-item-remover" data-id="${item.id}">&times;</span>
+                    `;
+                    carrinhoItens.appendChild(itemElement);
+                    subtotal += item.preco * item.quantidade;
+                });
+            }
+
+            subtotalElement.textContent = `R$ ${subtotal.toFixed(2)}`;
+            freteValorElement.textContent = `R$ ${frete.toFixed(2)}`;
+            carrinhoTotal.textContent = `R$ ${(subtotal + frete).toFixed(2)}`;
+            carrinhoContador.textContent = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+            atualizarLinkWhatsApp();
+
+            // Adicionar eventos de remover
+            document.querySelectorAll('.carrinho-item-remover').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    removerDoCarrinho(parseInt(e.target.dataset.id));
+                });
+            });
+
+            // Salvar no localStorage
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        }
+
+        // Cálculo de Frete
+        function calcularFrete(cep) {
+            if (!cep || cep.length !== 9) {
+                freteResultado.innerHTML = '<p style="color: #ff6b6b;">CEP inválido. Formato: 00000-000</p>';
+                return;
+            }
+
+            const regiao = cep.charAt(0);
+            let prazo = '';
+            const subtotal = carrinho.reduce((sum, item) => sum + (item.preco * item.quantidade), 0);
+
+            if (subtotal > 1500) {
+                frete = 0;
+                prazo = '3 dias úteis';
+                freteResultado.innerHTML = `
+                    <p><strong>Frete Grátis!</strong> Sua compra qualifica para entrega gratuita.</p>
+                    <p>Prazo estimado: ${prazo}</p>
+                `;
+            } else {
+                switch (regiao) {
+                    case '0': case '1': case '2': case '3':
+                        frete = 25.90;
+                        prazo = '3 dias úteis';
+                        break;
+                    case '4': case '5':
+                        frete = 32.50;
+                        prazo = '5 dias úteis';
+                        break;
+                    default:
+                        frete = 45.90;
+                        prazo = '7 dias úteis';
+                }
+
+                freteResultado.innerHTML = `
+                    <p><strong>Opção padrão:</strong> R$ ${frete.toFixed(2)}</p>
+                    <p>Prazo estimado: ${prazo}</p>
+                `;
+            }
+
+            atualizarCarrinho();
+        }
+
+        // Atualizar link do WhatsApp
+        function atualizarLinkWhatsApp() {
+            const subtotal = carrinho.reduce((sum, item) => sum + (item.preco * item.quantidade), 0);
+            const total = subtotal + frete;
+
+            let mensagem = "Olá, gostaria de finalizar minha compra na S.A PRATAS 925 com os seguintes itens:\n\n";
+
+            carrinho.forEach(item => {
+                mensagem += `- ${item.nome} (${item.quantidade}x): R$ ${(item.preco * item.quantidade).toFixed(2)}\n`;
+            });
+
+            mensagem += `\n*Subtotal:* R$ ${subtotal.toFixed(2)}\n`;
+            mensagem += `*Frete:* R$ ${frete.toFixed(2)}\n`;
+            mensagem += `*Total:* R$ ${total.toFixed(2)}\n\n`;
+            mensagem += "Por favor, confirme a disponibilidade e me envie as instruções para pagamento.";
+
+            finalizarWhatsappBtn.href = `https://wa.me/553899959880?text=${encodeURIComponent(mensagem)}`;
+        }
+
+        // Máscara para CEP
+        cepInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 5) {
+                value = value.substring(0, 5) + '-' + value.substring(5, 8);
+            }
+            e.target.value = value;
+        });
+
+        // Notificação
+        function mostrarNotificacao(mensagem) {
+            const notificacao = document.createElement('div');
+            notificacao.className = 'notificacao';
+            notificacao.innerHTML = `<i class="fas fa-check-circle"></i> ${mensagem}`;
+            document.body.appendChild(notificacao);
+
+            setTimeout(() => {
+                notificacao.classList.add('fade-out');
+                setTimeout(() => {
+                    notificacao.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Efeito de partículas para o formulário de login
+        function criarParticulas() {
+            const imagem = document.getElementById('imagem');
+            const particulas = [];
+            
+            for (let i = 0; i < 20; i++) {
+                const particula = document.createElement('div');
+                particula.className = 'particula';
+                
+                // Tamanho aleatório entre 2px e 6px
+                const tamanho = Math.random() * 4 + 2;
+                particula.style.width = `${tamanho}px`;
+                particula.style.height = `${tamanho}px`;
+                
+                // Posição aleatória
+                particula.style.left = `${Math.random() * 100}%`;
+                particula.style.top = `${Math.random() * 100}%`;
+                
+                // Opacidade aleatória
+                particula.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                // Animação
+                const duracao = Math.random() * 10 + 5;
+                particula.style.animation = `flutuar ${duracao}s infinite ease-in-out`;
+                
+                imagem.appendChild(particula);
+                particulas.push(particula);
+            }
+            
+            // Adicionar animação de flutuação
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes flutuar {
+                    0%, 100% {
+                        transform: translate(0, 0);
+                    }
+                    25% {
+                        transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px);
+                    }
+                    50% {
+                        transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px);
+                    }
+                    75% {
+                        transform: translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Event Listeners para Login
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                loginOverlay.classList.add('active');
+            }, 10);
+            
+            // Criar partículas apenas na primeira vez
+            if (!document.querySelector('.particula')) {
+                criarParticulas();
+            }
+        });
+
+        fecharLoginBtn.addEventListener('click', () => {
+            loginOverlay.classList.remove('active');
+            setTimeout(() => {
+                loginOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 400);
+        });
+
+        loginOverlay.addEventListener('click', (e) => {
+            if (e.target === loginOverlay) {
+                loginOverlay.classList.remove('active');
+                setTimeout(() => {
+                    loginOverlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 400);
+            }
+        });
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const senha = document.getElementById('login-senha').value;
+
+            // Aqui você pode adicionar a lógica de autenticação
+            console.log('Tentativa de login:', email, senha);
+
+            // Simulando login bem-sucedido
+            mostrarNotificacao('Login realizado com sucesso!');
+            loginOverlay.classList.remove('active');
+            setTimeout(() => {
+                loginOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 400);
+
+            // Redirecionar para a área administrativa
+            // window.location.href = "admin.html";
+        });
+
+        // Event Listeners para Carrinho
+        carrinhoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            atualizarCarrinho();
+            carrinhoOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        fecharCarrinho.addEventListener('click', () => {
+            carrinhoOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        calcularFreteBtn.addEventListener('click', () => {
+            calcularFrete(cepInput.value.trim());
+        });
+
+        // Fechar carrinho ao clicar fora
+        carrinhoOverlay.addEventListener('click', (e) => {
+            if (e.target === carrinhoOverlay) {
+                carrinhoOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Funções para os novos formulários
+        function abrirFormulario(form) {
+            fecharTodosFormularios();
+            form.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharTodosFormularios() {
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.classList.remove('active');
+            });
+            document.body.style.overflow = 'auto';
+        }
+
+        // Máscaras para CPF e Data
+        function aplicarMascaraCPF(input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                
+                if (value.length > 3) {
+                    value = value.substring(0, 3) + '.' + value.substring(3);
+                }
+                if (value.length > 7) {
+                    value = value.substring(0, 7) + '.' + value.substring(7);
+                }
+                if (value.length > 11) {
+                    value = value.substring(0, 11) + '-' + value.substring(11, 13);
+                }
+                
+                e.target.value = value.substring(0, 14);
+            });
+        }
+
+        function aplicarMascaraData(input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                
+                if (value.length > 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2);
+                }
+                if (value.length > 5) {
+                    value = value.substring(0, 5) + '/' + value.substring(5, 9);
+                }
+                
+                e.target.value = value.substring(0, 10);
+            });
+        }
+
+        // Toggle para mostrar/ocultar senha
+        function configurarToggleSenha(inputId, toggleId) {
+            const input = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            
+            toggle.addEventListener('click', function() {
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    toggle.classList.remove('fa-eye');
+                    toggle.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    toggle.classList.remove('fa-eye-slash');
+                    toggle.classList.add('fa-eye');
+                }
+            });
+        }
+
+        // Validação de formulários
+        function validarFormularioCadastro() {
+            let valido = true;
+            const form = document.getElementById('form-cadastro');
+            const nome = document.getElementById('nome-completo');
+            const dataNascimento = document.getElementById('data-nascimento');
+            const cpf = document.getElementById('cpf');
+            const email = document.getElementById('email-cadastro');
+            const senha = document.getElementById('senha-cadastro');
+            const confirmarSenha = document.getElementById('confirmar-senha');
+            
+            // Resetar erros
+            form.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            // Validar nome
+            if (nome.value.trim() === '') {
+                nome.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            // Validar data de nascimento (formato dd/mm/aaaa)
+            const dataRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+            if (!dataRegex.test(dataNascimento.value)) {
+                dataNascimento.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            // Validar CPF (formato 000.000.000-00)
+            const cpfRegex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+            if (!cpfRegex.test(cpf.value)) {
+                cpf.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            // Validar senha (exatamente 8 números)
+            const senhaRegex = /^\d{8}$/;
+            if (!senhaRegex.test(senha.value)) {
+                senha.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            // Validar confirmação de senha
+            if (senha.value !== confirmarSenha.value) {
+                confirmarSenha.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            return valido;
+        }
+
+        function validarFormularioRecuperacao() {
+            let valido = true;
+            const form = document.getElementById('form-recuperar-senha');
+            const email = document.getElementById('email-recuperacao');
+            
+            // Resetar erros
+            form.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                valido = false;
+            }
+            
+            return valido;
+        }
+
+        // Event Listeners para os novos formulários
+        cadastrarBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginOverlay.classList.remove('active');
+            setTimeout(() => {
+                loginOverlay.style.display = 'none';
+                abrirFormulario(cadastroForm);
+            }, 400);
+        });
+
+        esqueciSenhaBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginOverlay.classList.remove('active');
+            setTimeout(() => {
+                loginOverlay.style.display = 'none';
+                abrirFormulario(recuperarSenhaForm);
+            }, 400);
+        });
+
+        fecharCadastroBtn.addEventListener('click', fecharTodosFormularios);
+        fecharRecuperarSenhaBtn.addEventListener('click', fecharTodosFormularios);
+
+        loginFromCadastroBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            fecharTodosFormularios();
+            loginOverlay.style.display = 'flex';
+            setTimeout(() => {
+                loginOverlay.classList.add('active');
+            }, 10);
+        });
+
+        loginFromRecuperacaoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            fecharTodosFormularios();
+            loginOverlay.style.display = 'flex';
+            setTimeout(() => {
+                loginOverlay.classList.add('active');
+            }, 10);
+        });
+
+        // Submissão do formulário de cadastro
+        formCadastro.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validarFormularioCadastro()) {
+                // Simular envio do formulário
+                cadastroSucesso.style.display = 'block';
+                
+                // Limpar formulário
+                formCadastro.reset();
+                
+                // Redirecionar para login após 3 segundos
+                setTimeout(() => {
+                    fecharTodosFormularios();
+                    loginOverlay.style.display = 'flex';
+                    setTimeout(() => {
+                        loginOverlay.classList.add('active');
+                        cadastroSucesso.style.display = 'none';
+                    }, 10);
+                }, 3000);
+            }
+        });
+
+        // Submissão do formulário de recuperação de senha
+        formRecuperarSenha.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validarFormularioRecuperacao()) {
+                // Simular envio do e-mail
+                recuperacaoSucesso.style.display = 'block';
+                
+                // Limpar formulário
+                formRecuperarSenha.reset();
+                
+                // Ocultar mensagem de sucesso após 5 segundos
+                setTimeout(() => {
+                    fecharTodosFormularios();
+                    setTimeout(() => {
+                        recuperacaoSucesso.style.display = 'none';
+                    }, 500);
+                }, 5000);
+            }
+        });
+
+        // Configurar máscaras e toggles
+        document.addEventListener('DOMContentLoaded', function() {
+            // Máscaras
+            aplicarMascaraCPF(document.getElementById('cpf'));
+            aplicarMascaraData(document.getElementById('data-nascimento'));
+            
+            // Toggles de senha
+            configurarToggleSenha('senha-cadastro', 'toggle-senha-cadastro');
+            configurarToggleSenha('confirmar-senha', 'toggle-confirmar-senha');
+            
+            // Fechar ao clicar fora dos formulários
+            document.querySelectorAll('.form-container').forEach(container => {
+                container.addEventListener('click', function(e) {
+                    if (e.target === container) {
+                        fecharTodosFormularios();
+                    }
+                });
+            });
+        });
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarProdutos(); // Inicia sem mostrar produtos
+
+            // Atualizar contador do carrinho ao carregar a página
+            carrinhoContador.textContent = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+
+            // Não ativar nenhum botão de filtro inicialmente
+            botoesFiltro.forEach(btn => btn.classList.remove('ativo'));
+
+            // Verificar se há hash na URL e scrollar para a seção
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    setTimeout(() => {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
